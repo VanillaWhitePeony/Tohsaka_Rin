@@ -16,6 +16,67 @@
   line-height: 1.1;
 }
 
+.entrance-guide {
+  position: fixed;
+  z-index: 20;
+  top: max(1rem, env(safe-area-inset-top));
+  right: max(1rem, env(safe-area-inset-right));
+  color: #000;
+}
+
+.entrance-guide summary {
+  width: fit-content;
+  margin-left: auto;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgb(0 0 0 / 25%);
+  border-radius: 0.5rem;
+  background: rgb(255 255 255 / 90%);
+  cursor: pointer;
+  list-style: none;
+}
+
+.entrance-guide summary::-webkit-details-marker {
+  display: none;
+}
+
+.entrance-guide summary:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 0.2rem;
+}
+
+.entrance-guide-panel {
+  box-sizing: border-box;
+  width: min(26rem, calc(100vw - 2rem));
+  max-height: 70svh;
+  overflow-y: auto;
+  padding: 1rem;
+  border: 1px solid rgb(0 0 0 / 25%);
+  border-radius: 0.5rem;
+  background: rgb(255 255 255 / 96%);
+  box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 18%);
+  line-height: 1.6;
+}
+
+.entrance-guide-panel h2,
+.entrance-guide-panel h3 {
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+}
+
+.entrance-guide-panel h2 {
+  font-size: 1.375rem;
+}
+
+.entrance-guide-panel h3 {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+}
+
+.entrance-guide-panel p {
+  margin: 0;
+  font-size: 1rem;
+}
+
 .entrance-enter {
   margin: 0 0 1.5rem;
   text-align: center;
@@ -32,6 +93,12 @@
   border-radius: 0.5rem;
   outline: 3px solid currentColor;
   outline-offset: 0.35rem;
+}
+
+@media (max-width: 768px) {
+  .entrance-page {
+    padding-top: max(4.5rem, calc(env(safe-area-inset-top) + 3.5rem));
+  }
 }
 
 .entrance-letter {
