@@ -18,8 +18,8 @@ site:
   description: '喜欢白牡丹 /励志要做环世界糕手 /蒟蒻 /Yuki Suou /Scylla /Tohsaka Rin / Mainz'
   avatar: /img/avatar.jpg # 网站头像
   showLogo: false # 是否显示图形 Logo；默认显示站点名称，启用后可替换 src/assets/svg/logo.svg
-  author: '1'
-  url: https://VanillaWhitePeony.github.io/Tohsaka_Rin
+  author: '远坂凛' # 其实我也不知道这个玩意在哪里
+  url: https://tohsaka-rin.blog
   defaultOgImage: /img/avatar.jpg # 默认 Open Graph 图片
   timezone: Asia/Shanghai # 时区配置 (IANA 格式)，用于日期显示和处理
   keywords: []
@@ -65,11 +65,12 @@ categoryMap:
   水笔: water-notes
   香草白牡丹: vanilla-white-peony
   ZJUT: zjut
-  游戏时间: game-time
+  摸鱼kaste: game-time
   缘神: yuan-shen
   冰盖: bing-gai
   凛的文明时间: rin-civilization-time
   其他: other
+  梦啼妆泪红阑干: meng-ti-zhuang-lei-hong-lan-gan
   夜深忽梦少年事: night-dreams-of-youth
   emo: emo
   欲笺心事: yu-jian-xin-shi
@@ -80,14 +81,15 @@ categoryTree:
   - name: 香草白牡丹
     children:
       - name: ZJUT
-  - name: 游戏时间
+  - name: 摸鱼kaste
     children:
       - name: 缘神
       - name: 冰盖
       - name: 凛的文明时间
       - name: 其他
-  - name: 夜深忽梦少年事
+  - name: 梦啼妆泪红阑干
     children:
+      - name: 夜深忽梦少年事
       - name: emo
   - name: 欲笺心事
 
@@ -112,10 +114,10 @@ featuredCategories:
     label: 香草白牡丹
     image: /img/cover/2.webp
   - link: game-time
-    label: 游戏时间
+    label: 摸鱼kaste
     image: /img/cover/3.webp
-  - link: night-dreams-of-youth
-    label: 夜深忽梦少年事
+  - link: meng-ti-zhuang-lei-hong-lan-gan
+    label: 梦啼妆泪红阑干
     image: /img/cover/8.webp
 
 # =============================================================================

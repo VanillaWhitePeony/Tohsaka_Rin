@@ -37,7 +37,7 @@ const categoryTitleColors: Record<string, string> = {
   notes: '#222222',
   'water-notes': '#4A90E2',
   'vanilla-white-peony': '#E88BB5',
-  'night-dreams-of-youth': '#B84A62',
+  'meng-ti-zhuang-lei-hong-lan-gan': '#B84A62',
 };
 
 const categoryPosts: CategoryWithPosts[] = await Promise.all(
@@ -77,7 +77,7 @@ const categoryPosts: CategoryWithPosts[] = await Promise.all(
             ? 'object-position: 10% 10%'
             : category.link === 'game-time'
               ? 'object-position: center 35%'
-              : category.link === 'night-dreams-of-youth'
+              : category.link === 'meng-ti-zhuang-lei-hong-lan-gan'
                 ? 'object-position: center 25%'
                 : undefined,
       ]

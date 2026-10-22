@@ -14,7 +14,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      GITHUB_PAGES_BASE: /Tohsaka_Rin
+      GITHUB_PAGES_BASE: /
     steps:
       - name: Check out source
         uses: actions/checkout@v7

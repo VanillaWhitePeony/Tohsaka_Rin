@@ -1,4 +1,4 @@
-# 香草白牡丹
+# 香草白牡丹 [点击跳转Ta的github，绝对不是跳转到博客](https://tohsaka-rin.blog)
 
 一个基于 [cosZone/astro-koharu](https://github.com/cosZone/astro-koharu) 修改的个人博客。页面结构、文章系统、搜索、主题切换以及不少交互来自原主题；本站在此基础上调整了内容、布局、配色和入口页。
 
