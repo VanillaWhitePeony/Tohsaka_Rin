@@ -30,6 +30,12 @@
   transform: translate(140px, -20px);
 }
 
+@media (max-width: 768px) {
+  .cover-copy-site-brand {
+    transform: translateY(-20px);
+  }
+}
+
 .cover-copy :is(h1, h2) {
   text-shadow:
     0 0.15rem 0.35rem rgb(28 8 20 / 0.45),
