@@ -1,0 +1,16 @@
+---
+import { buildTagPath, getTagDisplayName } from '@lib/content/tags';
+import { localizedPath, t } from '@/i18n';
+
+interface Props {
+  tag: string;
+  count: number;
+  tier: number;
+  locale: string;
+}
+const { tag, count, tier, locale } = Astro.props;
+const displayName = getTagDisplayName(tag);
+---
+<a class="index-tag" data-tag={tag.toLowerCase()} data-tier={tier} href={localizedPath(buildTagPath(tag), locale)} aria-label={t(locale, 'tag.viewTagPosts', { tag: displayName, count })}>
+  {displayName}<sup aria-hidden="true">{count}</sup>
+</a>

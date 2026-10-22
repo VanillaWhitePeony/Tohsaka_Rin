@@ -1,0 +1,77 @@
+.entrance-page {
+  box-sizing: border-box;
+  min-height: 100svh;
+  width: 100%;
+  overflow-y: auto;
+  padding: clamp(1rem, 4vw, 3rem);
+  background: rgb(0 255 255 / 32%);
+  color: #000;
+}
+
+.entrance-title {
+  margin: 0 0 1rem;
+  text-align: center;
+  color: red;
+  font-size: clamp(3rem, 10vw, 6.25rem);
+  line-height: 1.1;
+}
+
+.entrance-enter {
+  margin: 0 0 1.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.entrance-enter a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.entrance-enter a:focus-visible {
+  border-radius: 0.5rem;
+  outline: 3px solid currentColor;
+  outline-offset: 0.35rem;
+}
+
+.entrance-letter {
+  font-size: 1rem;
+}
+
+.entrance-salutation {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.entrance-audience {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  background: rgb(255 255 255 / 70%);
+  background-position: left center;
+  background-size: cover;
+  font-weight: 300;
+  line-height: 1.8;
+  text-decoration: underline;
+  text-indent: 2rem;
+}
+
+.entrance-signoff {
+  margin: 0.75rem 0 0;
+  text-align: right;
+}
+
+.entrance-image {
+  display: block;
+  width: min(200px, 50vw);
+  height: auto;
+  margin: 0.75rem 0 0 auto;
+}
+
+.entrance-complaint {
+  margin: 1.5rem auto 0;
+  max-width: 60rem;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  text-align: center;
+}

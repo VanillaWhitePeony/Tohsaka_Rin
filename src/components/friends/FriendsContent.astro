@@ -1,0 +1,90 @@
+---
+import PageIntro from '@components/common/PageIntro.astro';
+import FriendRequestForm from '@components/friends/FriendRequestForm';
+import FriendsGrid from '@components/friends/FriendsGrid.astro';
+import { friendsData } from '@constants/friends-config';
+import { defaultLocale, t } from '@/i18n';
+
+interface Props {
+  locale?: string;
+}
+const { locale = defaultLocale } = Astro.props;
+---
+
+<div class="index-surface shadow-box flex flex-col gap-8">
+  <PageIntro className="page-intro-flush" stats={[{ value: friendsData.length, label: t(locale, 'friends.countUnit') }]} />
+  <FriendsGrid locale={locale} />
+  <div class="mb-4">
+    <FriendRequestForm locale={locale} />
+  </div>
+</div>
+
+<script is:inline data-astro-rerun>
+  (() => {
+    const root = document.querySelector('[data-friend-request-form]');
+    if (!root || root.dataset.ready === 'true') return;
+
+    const preview = root.querySelector('[data-friend-preview]');
+    const copyButton = root.querySelector('[data-friend-copy]');
+    const copyText = root.querySelector('[data-friend-copy-text]');
+    const colorPicker = root.querySelector('input[type="color"]');
+    const colorText = root.querySelector('[data-friend-color-text]');
+    if (!preview || !copyButton || !copyText || !colorPicker || !colorText) return;
+
+    const field = (name) => root.querySelector(`[name="${name}"]`)?.value.trim() ?? '';
+    const previewText = () => `site: ${field('site') || root.dataset.sitePlaceholder}
+url: ${field('url') || 'https://example.com'}
+owner: ${field('owner') || root.dataset.ownerPlaceholder}
+desc: ${field('desc') || root.dataset.descPlaceholder}
+image: ${field('image') || 'https://example.com/avatar.jpg'}
+color: "${colorText.value.trim() || '#ffc0cb'}"`;
+    const refresh = () => {
+      preview.textContent = previewText();
+    };
+
+    root.addEventListener('input', (event) => {
+      if (event.target === colorPicker) colorText.value = colorPicker.value;
+      if (event.target === colorText && /^#[0-9a-f]{6}$/i.test(colorText.value)) colorPicker.value = colorText.value;
+      refresh();
+    });
+
+    let resetTimer;
+    copyButton.addEventListener('click', async () => {
+      refresh();
+      const content = preview.textContent ?? '';
+      try {
+        const copyFallback = () => {
+          const input = document.createElement('textarea');
+          input.value = content;
+          input.style.position = 'fixed';
+          input.style.opacity = '0';
+          document.body.append(input);
+          input.select();
+          const copied = document.execCommand('copy');
+          input.remove();
+          if (!copied) throw new Error('Clipboard unavailable');
+        };
+        if (navigator.clipboard?.writeText) {
+          try {
+            await navigator.clipboard.writeText(content);
+          } catch {
+            copyFallback();
+          }
+        } else {
+          copyFallback();
+        }
+        copyText.textContent = root.dataset.copySuccess;
+      } catch {
+        copyText.textContent = root.dataset.copyFailure;
+      }
+      clearTimeout(resetTimer);
+      resetTimer = setTimeout(() => {
+        copyText.textContent = root.dataset.copyLabel;
+      }, 2000);
+    });
+
+    root.dataset.ready = 'true';
+    copyButton.disabled = false;
+    refresh();
+  })();
+</script>

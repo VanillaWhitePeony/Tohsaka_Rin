@@ -1,0 +1,60 @@
+---
+import { getCollection, render } from 'astro:content';
+import MomentsShell from '@components/moments/MomentsShell.astro';
+import { momentsConfig } from '@constants/site-config';
+import Layout from '@layouts/Layout.astro';
+import { siteConfig, siteTimezone } from '@lib/config/site';
+import { formatInTimeZone } from 'date-fns-tz';
+
+const entries = await Promise.all(
+  (await getCollection('share'))
+    .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+    .map(async (entry) => ({
+      id: `share-${entry.id}`,
+      date: entry.data.date,
+      Content: (await render(entry)).Content,
+    })),
+);
+---
+
+<Layout articleTools={false} title={`${momentsConfig.title} | ${siteConfig.title}`}>
+  <MomentsShell title={momentsConfig.title}>
+    <ol class="moments-timeline" data-moments-timeline>
+      {entries.map(({ id, date, Content }) => {
+        const dateTime = date.toISOString();
+        const dateLabel = formatInTimeZone(date, siteTimezone, 'yyyy-MM-dd HH:mm');
+        return (
+          <li class="moments-conversation">
+            <ol class="moments-conversation-messages">
+              <li class="moments-timeline-row" data-moments-row data-group-start="true">
+                <a class="moments-timeline-time" href={`#${id}`} aria-label={dateLabel}>
+                  <time datetime={dateTime}>
+                    <span class="block">{formatInTimeZone(date, siteTimezone, 'MM-dd')}</span>
+                    <span class="block">{formatInTimeZone(date, siteTimezone, 'HH:mm')}</span>
+                  </time>
+                </a>
+                <article id={id} class="static-moment-card min-w-0">
+                  <time datetime={dateTime} class="text-muted-foreground block text-xs">{dateLabel}</time>
+                  <div class="static-moment-content prose prose-sm text-foreground mt-2 max-w-[72ch] break-words">
+                    <Content />
+                  </div>
+                </article>
+              </li>
+            </ol>
+          </li>
+        );
+      })}
+    </ol>
+  </MomentsShell>
+</Layout>
+
+<style>
+  .static-moment-card {
+    scroll-margin-top: 6rem;
+  }
+
+  :global(.static-moment-content img) {
+    max-width: 100%;
+    border-radius: 0.75rem;
+  }
+</style>
