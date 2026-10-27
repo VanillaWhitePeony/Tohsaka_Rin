@@ -107,9 +107,9 @@ export const syntaxEntries: SyntaxEntry[] = [
     id: 'image',
     label: '图片',
     category: '链接与媒体',
-    description: '使用图片网址插入图片，并为图片填写替代文字。',
-    source: '![描述图片内容](https://example.com/image.webp "图片说明")',
-    notes: ['把示例网址替换成可访问的图片 URL。编辑器不上传本地图片，下载的 Markdown 也不包含图片文件。'],
+    description: '使用站内图片路径插入图片，并为图片填写替代文字。',
+    source: '![描述图片内容](/img/cover/2.webp "图片说明")',
+    notes: ['图片文件放在 public/img/ 下，正文引用时从 /img/ 开始。编辑器不上传图片，下载的 Markdown 也不包含图片文件。'],
   },
   {
     id: 'embed',
@@ -350,10 +350,10 @@ export const syntaxEntries: SyntaxEntry[] = [
     category: '文章设置',
     description: '文章最开头的 YAML 区域保存标题、日期、封面、分类等元信息。',
     source:
-      '---\ntitle: 我的新文章\ndate: 2026-01-01\ndescription: 一句话介绍文章\ncover: https://example.com/cover.webp\ncategories:\n  - 笔记\ntags:\n  - 写作\ncatalog: true\nmath: true\nquiz: true\n---',
+      '---\ntitle: 我的新文章\ndate: 2026-01-01\ndescription: 一句话介绍文章\ncover: /img/cover/2.webp\ncategories:\n  - 笔记\ntags:\n  - 写作\ncatalog: true\nmath: true\nquiz: true\n---',
     notes: [
       '这是一份完整属性示例，应放在文档最开头，替换或合并已有属性，不要在正文中重复插入。',
-      'cover 为封面 URL，catalog: false 时文章不计入分类页的分类树与篇数；link 可设置固定文章路径，draft: true 标记草稿，password 可设置整篇加密。复制与下载保留完整属性区。',
+      'cover 为从 /img/ 开始的站内封面路径，catalog: false 时文章不计入分类页的分类树与篇数；link 可设置固定文章路径，draft: true 标记草稿，password 可设置整篇加密。复制与下载保留完整属性区。',
     ],
   },
 ];

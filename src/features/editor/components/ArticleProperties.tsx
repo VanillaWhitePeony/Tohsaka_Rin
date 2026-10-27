@@ -154,9 +154,10 @@ function ColophonProperty({ value, groups, onEdit }: ColophonPropertyProps) {
 
 const textFields = {
   title: { label: '标题', placeholder: '文章标题' },
+  link: { label: '链接标识（link）', placeholder: '' },
   date: { label: '发布时间', placeholder: '2026-01-01 12:00:00' },
   updated: { label: '更新时间', placeholder: '留空则不显示' },
-  cover: { label: '封面网址', placeholder: 'https://…' },
+  cover: { label: '封面路径', placeholder: '/img/cover/2.webp' },
   description: { label: '摘要', placeholder: '显示在文章开头与列表中' },
 } as const;
 
@@ -183,6 +184,7 @@ export default function ArticleProperties({ data, error, colophon, onChange, onL
       <p className="editor-muted">与源码中的 YAML 同步；标签与分类用逗号分隔，自定义字段请在源码中编辑。</p>
       {error && <p className="editor-error">{error}</p>}
       {textField('title')}
+      {textField('link')}
       <div className="editor-field-row editor-field-stack">
         {textField('date')}
         {textField('updated')}

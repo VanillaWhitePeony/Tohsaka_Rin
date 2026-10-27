@@ -314,7 +314,7 @@ function link(state: EditorState, range: SelectionRange, image: boolean): Edit {
   const text = state.doc.sliceString(range.from, range.to);
   const isURL = /^https?:\/\/\S+$/i.test(text);
   const label = (text && !isURL ? text : image ? '描述图片内容' : '链接文字').replace(/[\\[\]]/g, '\\$&');
-  const url = (isURL ? text : image ? 'https://example.com/image.webp' : 'https://example.com').replace(/[\\()]/g, '\\$&');
+  const url = (isURL ? text : image ? '/img/cover/2.webp' : 'https://example.com').replace(/[\\()]/g, '\\$&');
   const prefix = `${image ? '!' : ''}[`;
   const value = `${prefix}${label}](${url})`;
   return replace(
