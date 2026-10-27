@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { unified } from '@astrojs/markdown-remark';
 import node from '@astrojs/node';
 import react from '@astrojs/react';
@@ -50,6 +51,8 @@ function loadConfigForAstro() {
 }
 
 const yamlConfig = loadConfigForAstro();
+const workerHtmlParserPath = fileURLToPath(import.meta.resolve('hast-util-from-html-isomorphic'));
+const workerEntityDecoderPath = fileURLToPath(import.meta.resolve('decode-named-character-reference'));
 
 // Bundle analysis mode: ANALYZE=true pnpm build
 // Use loadEnv to read .env file (astro.config.mjs runs before Vite loads .env)
@@ -299,6 +302,10 @@ export default defineConfig({
     },
     plugins: [...(isAnalyze ? [Sonda({ open: false })] : []), yaml(), conditionalSnowfall(), svgr(), tailwindcss()],
     resolve: {
+      alias: {
+        'hast-util-from-html-isomorphic': workerHtmlParserPath,
+        'decode-named-character-reference': workerEntityDecoderPath,
+      },
       noExternal: ['react-tweet'],
     },
     optimizeDeps: {

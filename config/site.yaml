@@ -367,15 +367,15 @@ colophon:
     handwritten:
       group: authorship
       icon: ri:quill-pen-line
-      label: 人写的
+      label: 人
     ai-cowrite:
       group: authorship
       icon: ri:sparkling-2-line
-      label: 人机写的
+      label: 人机
     ai-lead:
       group: authorship
       icon: ri:sparkling-2-fill
-      label: 机写的
+      label: 机
     # ai-idea: { group: ai, icon: ri:lightbulb-flash-line, label: 构思, description: 和 AI 聊过选题与结构。 }
     # ai-polish: { group: ai, icon: ri:magic-line, label: 润色, description: AI 帮忙改过措辞和错字。 }
     # ai-code: { group: ai, icon: ri:code-s-slash-line, label: 代码, description: 示例代码有 AI 参与编写。 }
@@ -451,6 +451,9 @@ navigation:
     nameKey: nav.friends
     path: /friends
     icon: ri:links-line
+  - name: 写作室
+    path: /editor
+    icon: ri:edit-box-line
   - name: 关于
     nameKey: nav.about
     path: /about
