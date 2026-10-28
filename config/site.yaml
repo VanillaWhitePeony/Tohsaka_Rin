@@ -62,22 +62,25 @@ i18n:
 # =============================================================================
 categoryMap:
   笔记: notes
-  水笔: water-notes
-  香草白牡丹: vanilla-white-peony
+  水笔: water
+  香草白牡丹: vwp
   ZJUT: zjut
-  摸鱼kaste: game-time
-  缘神: yuan-shen
-  冰盖: bing-gai
-  凛的文明时间: rin-civilization-time
+  摸鱼kaste: game
+  缘神: rimworld
+  冰盖: rimworld-mac
+  凛的文明时间: civ6
   其他: other
-  梦啼妆泪红阑干: meng-ti-zhuang-lei-hong-lan-gan
-  夜深忽梦少年事: night-dreams-of-youth
+  梦啼妆泪红阑干: sad
+  夜深忽梦少年事: memory
   emo: emo
-  欲笺心事: yu-jian-xin-shi
+  欲笺心事: noword
+  y2026: '2026'
 
 categoryTree:
   - name: 笔记
   - name: 水笔
+    children:
+      - name: y2026
   - name: 香草白牡丹
     children:
       - name: ZJUT
@@ -107,16 +110,16 @@ featuredCategories:
   - link: notes
     label: 笔记
     image: /img/cover/7.webp
-  - link: water-notes
+  - link: water
     label: 水笔
     image: /img/cover/4.webp
-  - link: vanilla-white-peony
+  - link: vwp
     label: 香草白牡丹
     image: /img/cover/2.webp
-  - link: game-time
+  - link: game
     label: 摸鱼kaste
     image: /img/cover/3.webp
-  - link: meng-ti-zhuang-lei-hong-lan-gan
+  - link: sad
     label: 梦啼妆泪红阑干
     image: /img/cover/8.webp
 
@@ -138,7 +141,7 @@ featuredCategories:
 #   links: 相关链接配置（可选）
 # -----------------------------------------------------------------------------
 featuredSeries:
-  - slug: yu-jian-xin-shi
+  - slug: noword
     categoryName: 欲笺心事
     label: 欲笺心事
     fullName: 欲笺心事
