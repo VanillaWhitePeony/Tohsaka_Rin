@@ -10,6 +10,8 @@ comments: false
 
 经学海平板翻译，香草白牡丹=VanillaWhitePeony=>VenusWhitePeony=>V.W.P.
 
+至于Vanilla怎么到Venus的，你看他们都是V开头的，我当时应该在学钒元素，然后钒是取自于Venus的V
+
 长恨此身非我有，何时忘却营营
 
 > 翩若惊鸿，宛若游龙\

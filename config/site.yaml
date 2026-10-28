@@ -426,7 +426,7 @@ navigation:
   # - name: 书摘
   #   path: /reading
   - name: 欲笺心事
-    path: /yu-jian-xin-shi
+    path: /noword
     icon: ri:newspaper-line
   # Optional explicit Moments position. When omitted, enabled Moments is inserted after Archives.
   # - feature: moments
