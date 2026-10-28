@@ -541,7 +541,7 @@ comment:
   #   lang: zh-CN                      # 语言
 
   waline:
-    serverURL: https://blogforrin-korb.vercel.app
+    serverURL: https://comments.tohsaka-rin.blog
     pageview: false
     locale:
       placeholder: |-
