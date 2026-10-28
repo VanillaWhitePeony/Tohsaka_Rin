@@ -544,7 +544,10 @@ comment:
     serverURL: https://blogforrin-korb.vercel.app
     pageview: false
     locale:
-      placeholder: '干嘛……老大不要骂我qwq……'
+      placeholder: |-
+        宝宝你不会骂我的对吧，亲爱的你要写些什么屑屑你
+        好恶心
+        不许说我恶心…
   #   lang: zh-CN                      # 语言 (默认: 'zh-CN')
   #   dark: html.dark                  # 暗黑模式 (默认: 'html.dark')
   #                                    # 可选: true (自适应) | false (禁用) | CSS选择器字符串
