@@ -3,7 +3,7 @@ layout: ../layouts/PageLayout.astro
 title: "About"
 coverTitle: "关于我"
 description: "爱你"
-comments: false
+comments: true
 ---
 
 ## 这里是香草白牡丹的香草白牡丹，今天依旧香草白牡丹
@@ -27,7 +27,7 @@ comments: false
 上课摸鱼ing
 
 +++primary 给自己打的tag
-[环世界玩家]{.yellow} [边缘世界玩家]{.aqua} [Rimworld玩家]{.pink} [长期档偏爱]{.grey} [Steam 游戏收藏]{.purple} [我喜欢幽灵鲨]{.blue} [我喜欢皇冠]{.aqua} [我喜欢美因茨]{.green} [我喜欢远坂凛]{.orange} [我喜欢斯库拉]{.grey} [我喜欢周防有希]{.yellow} [我喜欢次生银翼]{.aqua} [我喜欢瑟莉姆]{.pink} [打我拉饥找不到人]{.pink} !!神经!!{.blur} !!香草白牡丹!!{.blur} !!为什么这么打tag,是因为不会打吗!!{.blur}
+[环世界玩家]{.yellow} [边缘世界玩家]{.aqua} [Rimworld玩家]{.pink} [长期档偏爱]{.grey} [Steam 游戏收藏]{.purple} [我喜欢幽灵鲨]{.blue} [我喜欢皇冠]{.aqua} [我喜欢拉斐尔]{.green} [我喜欢美因茨]{.grey} [我喜欢远坂凛]{.orange} [我喜欢斯库拉]{.grey} [我喜欢周防有希]{.yellow} [我喜欢次生银翼]{.aqua} [我喜欢瑟莉姆]{.pink} [打我拉饥找不到人]{.pink} !!神经!!{.blur} !!香草白牡丹!!{.blur} !!为什么这么打tag,是因为不会打吗!!{.blur}
 +++
 
 ### 找不到我

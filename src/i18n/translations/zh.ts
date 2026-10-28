@@ -431,7 +431,7 @@ export const uiStrings = {
   'cover.copyLink': '复制链接',
 
   // ── Comment ────────────────────────────────────────────────
-  'comment.prompt': '喜欢的话，留下你的评论吧～',
+  'comment.prompt': '评论区',
   'comment.error': '评论加载失败，请刷新页面重试',
   'comment.retry': '刷新重试',
 

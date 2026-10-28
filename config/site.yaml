@@ -525,7 +525,7 @@ navigation:
     # path: # 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
     # lang: # 语言 (默认: 'zh-CN')
 comment:
-  provider: none  # 'remark42' | 'giscus' | 'waline' | 'twikoo' | 'none'
+  provider: waline  # 'remark42' | 'giscus' | 'waline' | 'twikoo' | 'none'
   # remark42:
   #   host: https://comment.example.com/
   #   siteId: your-site-id
@@ -540,8 +540,11 @@ comment:
   #   inputPosition: top               # 输入框位置 ('top' | 'bottom')
   #   lang: zh-CN                      # 语言
 
-  # waline:
-  #   serverURL: https://your-waline.vercel.app  # Waline 服务端地址 (必填)
+  waline:
+    serverURL: https://blogforrin-korb.vercel.app
+    pageview: false
+    locale:
+      placeholder: '干嘛……老大不要骂我qwq……'
   #   lang: zh-CN                      # 语言 (默认: 'zh-CN')
   #   dark: html.dark                  # 暗黑模式 (默认: 'html.dark')
   #                                    # 可选: true (自适应) | false (禁用) | CSS选择器字符串
