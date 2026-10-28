@@ -544,6 +544,8 @@ comment:
     serverURL: https://comments.tohsaka-rin.blog
     pageview: false
     locale:
+      sofa: 0个人在意
+      nickError: 神秘无名不留名
       placeholder: |-
         宝宝你不会骂我的对吧，亲爱的你要写些什么屑屑你
         好恶心
